@@ -55,29 +55,3 @@ while (currentByteSize > 0) {
     fs.closeSync(fdSampleFile);
   }
 }
-
-// fs.open(sampleFilePath, 'r', (err, fd) t=> {
-//   if (err) throw err;
-
-//   writeSplitedChunkFile(fd, startPosition);
-// });
-
-// function writeSplitedChunkFile(fd, position) {
-//   fs.read(fd, buffer, 0, MAX_CHUNK_SIZE, null, (err, byteSize) => {
-//     if (err) throw err;
-
-//     if (byteSize === 0) return fs.close(fd);
-
-//     const chunk = (byteSize < MAX_CHUNK_SIZE) ? buffer.subarray(0, byteSize) : buffer;
-
-//     const sampleFileChunkPath = chunkFilesDirPath.concat('/', sampleFilePath, '.part', position);
-//     const sampleFileChunk = fs.createWriteStream(sampleFileChunkPath);
-
-//     console.log(`${byteSize} writed to ${sampleFileChunkPath}`);
-
-//     sampleFileChunk.write(chunk);
-//     position++;
-
-//     writeSplitedChunkFile(fd, position);
-//   });
-// }
