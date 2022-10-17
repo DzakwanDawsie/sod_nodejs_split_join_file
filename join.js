@@ -5,6 +5,7 @@ const fs = require('fs');
 const sampleFileResultPath = 'sample-file-result.mp4';
 const chunkFilesDirPath = 'chunk-files';
 
+// Mengecek apakah telah melakukan split file sebelumnya
 if (!fs.existsSync(chunkFilesDirPath)) return console.log('There is no chunk files to processed, please run `node split.js` first');
 
 // Membaca semua file yang ada pada folder penyimpanan data chunk
